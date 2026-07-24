@@ -1,6 +1,9 @@
 # RAMidi
 A fast MIDI visualizer that focuses SPECIFICALLY in optimizing RAM space and performance.
 
+Here's some interesting facts:
+Notes have a size of 4 bytes, and the average of them is going to be even lower, with the addition of Greedy meshing.
+
 THIS SOFTWARE IS CURRENTLY IN INDEV VERSION!
 Commits currently are in date format: DD:MM:YYYY-HH:mm
 

@@ -2,6 +2,7 @@
 A fast MIDI visualizer that focuses SPECIFICALLY in optimizing RAM space and performance.
 
 THIS SOFTWARE IS CURRENTLY IN INDEV VERSION!
+Commits currently are in date format: DD:MM:YYYY-HH:mm
 
 # Build
 1. Install GCC using mingw-w64 (Windows: https://github.com/skeeto/w64devkit/releases)

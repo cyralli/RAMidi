@@ -1,0 +1,4 @@
+-Iinclude
+-Iinclude/glad
+-Iinclude/GLFW
+-std=c11

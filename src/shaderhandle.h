@@ -2,7 +2,6 @@
 #define SHADERHANDLE_H
 
 #include <glad/glad.h>
-#define GLFW_DLL
 #include <GLFW/glfw3.h>
 
 #include "shaders/default_vert.h"

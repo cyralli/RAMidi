@@ -3,7 +3,7 @@
 
 #include "renderstate.h"
 
-void render(GLFWwindow *window, RenderState* state) {
+static inline void render(GLFWwindow *window, RenderState* state) {
   
     float time = glfwGetTime();
     state->tick = time * 100;
@@ -22,3 +22,15 @@ void render(GLFWwindow *window, RenderState* state) {
 
     glfwSwapBuffers(window);
 }
+
+static inline void beingresized(GLFWwindow* window, int width, int height) {
+    glViewport(0, 0, width, height);
+
+    #ifdef _WIN32 // when resizing a window in windows, the program freezes, so we also render when we are resizing
+        RenderState* state = (RenderState*)glfwGetWindowUserPointer(window);
+
+        if (state != NULL) {
+            render(window, state);
+        }
+    #endif
+}  

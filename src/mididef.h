@@ -1,3 +1,6 @@
+#ifndef MIDIDEFINES_H
+#define MIDIDEFINES_H
+
 #include <stdint.h>
 
 // struct to note
@@ -22,6 +25,13 @@ typedef struct {
     */
 } __attribute__((packed)) PitchTrack;
 
-/* do NOT make a struct that stores pitchtracks,
-we have the goal of not storing everything in our ram,
-if we do that to files with 9 GB were DONE!! you cant make a memory leak bro */
+// sorry LMAO the last comment in here was kinda messed up, in that comment i think what i meant to say was on making a
+// whole struct with pitchtracks, kinda like a file, however, the only thing that we need instead is a chunk
+
+// i think a good idea on this is: we can send the amount of tracks that have notes in the midi file
+// remember that every track has a different color, its NOT the channel.
+
+// then send your tracks, idk it can just be any order, shouldnt be a big deal
+// then inside the tracks its just the same old stuff
+
+#endif

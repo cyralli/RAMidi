@@ -1,17 +1,15 @@
-mainname = main
+CC = gcc
+CFLAGS = -O2 -Iinclude
+LDFLAGS = -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+
+SRC = $(wildcard src/*.c)
+BUILD_DIR = build
+TARGET = $(BUILD_DIR)/main
 
 all:
-	# compile the shaders to unsigned char arrays for c
 	xxd -i src/shaders/default.frag > src/shaders/default_frag.h
 	xxd -i src/shaders/default.vert > src/shaders/default_vert.h
+	
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS) 
 
-	gcc -O2 -o build/$(mainname).exe \
-		src/$(mainname).c \
-		src/glad.c \
-		-Iinclude \
-		-Llib \
-		-lopengl32 \
-		-lglfw3dll \
-		-lgdi32
-
-	./build/main.exe
+	./$(TARGET)

@@ -2,7 +2,6 @@
 #define RENDERSTATE_H
 
 #include <glad/glad.h>
-#define GLFW_DLL
 #include <GLFW/glfw3.h>
 
 #include <stdbool.h>
@@ -16,6 +15,7 @@ typedef struct {
 
     // values that the shader uses
     uint16_t totalVisibleNotes;
+    uint32_t tick; // 4 bill, more than enough
 
     // memory
     uint8_t* stagingBuffer; // pointer to data
@@ -24,10 +24,8 @@ typedef struct {
     // engine state
     bool isRunning;
 
-    // debug & deltaTime
-    double lastFrameTime;
+    // still will be VERY important for later!
     double deltaTime;
-    float fps;
 
 } RenderState;
 
